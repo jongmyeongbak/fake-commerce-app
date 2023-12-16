@@ -8,27 +8,11 @@ import ProductCounter from './components/ProductCounter'
 export default function App() {
   return (
     <Routes>
-      <Route path="/" element={<Layout />}>
-        <Route index element={<Home />} />
-        <Route path="products" element={<ProductList />} />
-        <Route path="products/:id" element={<ProductDetail />} />
-        <Route path="*" element={<NoMatch />} />
-      </Route>
+      <Route path="products" element={<ProductList />} />
+      <Route path="products/:id" element={<ProductDetail />} />
+      <Route path="*" element={<NoMatch />} />
     </Routes>
   )
-}
-
-function Layout() {
-  return (
-    <div className="drawer-content flex flex-col">
-      <NavigationBar />
-      <Outlet />
-    </div>
-  )
-}
-
-function Home() {
-  return <h1>Home</h1>
 }
 
 function ProductList() {
