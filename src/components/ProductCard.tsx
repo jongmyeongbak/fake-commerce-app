@@ -1,22 +1,26 @@
-import Image from "next/image";
-
 type Props = {
-  title: string;
-  image: string;
-  description?: string;
-};
+  title: string
+  image: string
+  description?: string
+}
 
 const ProductCard = (props: Props) => {
   return (
     <li className="card card-compact w-90 bg-base-100 shadow-xl">
       <figure className="relative h-60">
-        <Image
+        <img
           src={props.image}
           alt={props.title}
-          fill
           style={{
-            objectFit: "cover",
-            objectPosition: "top center",
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover',
+            objectPosition: 'top center',
           }}
         />
       </figure>
@@ -25,7 +29,7 @@ const ProductCard = (props: Props) => {
         {props.description && <p>{props.description}</p>}
       </div>
     </li>
-  );
-};
+  )
+}
 
-export default ProductCard;
+export default ProductCard
